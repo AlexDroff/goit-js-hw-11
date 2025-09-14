@@ -1,0 +1,95 @@
+/* Галерея */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 360px);
+  gap: 16px;
+  list-style: none;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Карточка зображення */
+.gallery__item {
+  width: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Зображення */
+.gallery__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Інформаційна панель — усі дані в одному рядку */
+.info {
+  padding: 12px;
+  background-color: white;
+  border-top: 1px solid #e5e7eb;
+  font-size: 14px;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-item {
+  text-align: center;
+  flex: 1;
+  padding: 0 8px;
+}
+
+.info-item b {
+  color: #4e75ff;
+  font-weight: 600;
+  display: block;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+
+.info-item span {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Кнопка "Завантажити ще" */
+.load-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 120px;
+  height: 40px;
+  background: #4e75ff;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin: 20px auto 0; /* центрована під галереєю з відступом зверху */
+  display: none; /* прихована за замовчуванням */
+}
+
+.load-more:hover {
+  background: #3d60e0;
+}
+
+.load-more:active {
+  background: #2e4ecb;
+}

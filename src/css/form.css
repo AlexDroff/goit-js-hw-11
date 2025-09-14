@@ -1,0 +1,81 @@
+/* Общая настройка */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f6fa;
+  color: #2e2f42;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Форма поиска */
+.form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  width: 272px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.form input[type='text'] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  background-color: white;
+}
+
+.form input[type='text']:focus {
+  border-color: #4e75ff;
+  box-shadow: 0 0 0 2px rgba(78, 117, 255, 0.2);
+}
+
+.form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.form button:hover {
+  background: #3d60e0;
+}
+
+.form button:active {
+  background: #2e4ecb;
+}
+
+/* Надпись "Loading..." */
+.loading-message {
+  font: 400 16px / 1.5 'Montserrat', sans-serif;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin: 20px 0;
+  text-align: center;
+}
