@@ -48,17 +48,3 @@ export function hideLoader() {
   if (loaderEl) loaderEl.style.display = 'none';
   if (loaderTextEl) loaderTextEl.style.display = 'none';
 }
-
-const loadMoreBtn = document.querySelector('.load-more');
-
-export function showLoadMore() {
-  if (loadMoreBtn) loadMoreBtn.style.display = 'block';
-}
-
-export function hideLoadMore() {
-  if (loadMoreBtn) loadMoreBtn.style.display = 'none';
-}
-
-export function getLoadMoreBtn() {
-  return loadMoreBtn;
-}

@@ -6,16 +6,11 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
-  showLoadMore,
-  hideLoadMore,
-  getLoadMoreBtn,
 } from './js/render-functions.js';
 
 const form = document.querySelector('.form');
 let currentQuery = '';
 let currentPage = 1;
-
-const loadMoreBtn = getLoadMoreBtn();
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -31,7 +26,6 @@ form.addEventListener('submit', e => {
 
   currentPage = 1;
   clearGallery();
-  hideLoadMore();
   showLoader();
 
   getImagesByQuery(currentQuery, currentPage)
@@ -47,38 +41,12 @@ form.addEventListener('submit', e => {
       }
 
       createGallery(data.hits);
-      if (data.hits.length === 20) {
-        showLoadMore();
-      }
     })
     .catch(error => {
       hideLoader();
       iziToast.error({
         title: 'Error',
         message: 'An error occurred while fetching images.',
-      });
-      console.error(error);
-    });
-});
-
-loadMoreBtn.addEventListener('click', () => {
-  currentPage += 1;
-  showLoader();
-  hideLoadMore();
-
-  getImagesByQuery(currentQuery, currentPage)
-    .then(data => {
-      hideLoader();
-      if (data.hits.length) {
-        createGallery(data.hits);
-        if (data.hits.length === 20) showLoadMore();
-      }
-    })
-    .catch(error => {
-      hideLoader();
-      iziToast.error({
-        title: 'Error',
-        message: 'An error occurred while fetching more images.',
       });
       console.error(error);
     });
